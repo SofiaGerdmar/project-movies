@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const MovieList = ({ movies }) => {
+const MovieList = ({ movies }) => {
   return (
     <section className="list">
       {movies.map((movie) => {
@@ -18,3 +18,4 @@ export const MovieList = ({ movies }) => {
   )
 };
 
+export default MovieList

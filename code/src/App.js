@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { MovieDetails } from 'components/MovieDetails';
+import MovieDetails from 'components/MovieDetails';
 import { Header } from 'components/Header';
-import { MovieList } from 'components/MovieList';
+import MovieList from 'components/MovieList';
 import { NotFound } from 'components/NotFound';
 
 export const App = () => {
@@ -23,6 +23,7 @@ export const App = () => {
         setLoading(false)
       })
   }, [])
+
   if (loading) {
     return (
       <p>Loading...</p>
@@ -33,7 +34,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MovieList movies={list} />} />
-        <Route path="/details/:movieId" element={<MovieDetails />} />
+        <Route path="/details/:movieInfo" element={<MovieDetails />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
